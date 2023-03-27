@@ -2,7 +2,7 @@ import React from "react";
 import Jumbotron from '../components/jumbotron'
 import JumboData from '../fixtures/jumbo.json';
 
-export function JumbotronContainer() {
+export default function JumbotronContainer() {
   return (
     <>
       <Jumbotron.Container>
