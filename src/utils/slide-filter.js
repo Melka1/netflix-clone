@@ -1,0 +1,48 @@
+export default function slideFilter({films, series}){
+    return {
+        series:[
+            {
+                title:'Documentaries',
+                data:series.filter(items=>items.genre=='documentaries')
+            },
+            {
+                title:'Comedies',
+                data:series.filter(items=>items.genre=='comedies')
+            },
+            {
+                title:'Crime',
+                data:series.filter(items=>items.genre=='crime')
+            },
+            {
+                title:'Children',
+                data:series.filter(items=>items.genre=='children')
+            },
+            {
+                title:'Feel Good',
+                data:series.filter(items=>items.genre=='feel-good')
+            }
+        ],
+        films:[
+            {
+                title:'Drama',
+                data:films.filter(items=>items.genre=='drama')
+            },
+            {
+                title:'Thriller',
+                data:films.filter(items=>items.genre=='thriller')
+            },
+            {
+                title:'Suspense',
+                data:films.filter(items=>items.genre=='suspense')
+            },
+            {
+                title:'Children',
+                data:films.filter(items=>items.genre=='children')
+            },
+            {
+                title:'Romance',
+                data:films.filter(items=>items.genre=='romance')
+            }
+        ]
+    }
+}

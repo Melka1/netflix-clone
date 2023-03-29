@@ -22,6 +22,7 @@ export default function SignIn(){
             .auth().signInWithEmailAndPassword(emailAddress, password)
             .then((res) => {
                 console.log(res);
+                localStorage.setItem("user", JSON.stringify(res.user))
                 navigate(ROUTES.BROWSE)
             })
             .catch((err) => {
