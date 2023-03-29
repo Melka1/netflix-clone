@@ -7,6 +7,10 @@ export const Background = styled.div`
     background:url(${({src})=>{
         return src?`../images/misc/${src}.jpg`:'../images/misc/home-bg.jpg';
     }}) top left / cover no-repeat;
+
+    @media (max-width:1100px){
+        ${({dontShow})=>dontShow && `background:none`}
+    }
 `;
 
 export const Container = styled.div`
@@ -27,6 +31,12 @@ export const Container = styled.div`
 `;
 
 export const Frame = styled.div``;
+
+export const Group = styled.div`
+    display:flex;
+    align-items:center;
+    // margin-right:20px;
+`;
 
 export const Logo = styled.img`
     height: 32px;
@@ -57,3 +67,82 @@ export const ButtonLink = styled(ReactRouterLink)`
         background-color:#f40612;
     }
 `;
+
+export const Feature = styled(Container)`
+    padding:150px 0 500px 0;
+    flex-direction:column;
+    align-items:normal;
+    width:50%;
+
+    @media (max-width:1100px) {
+        display: none;
+    }
+`;
+
+export const Text = styled.p`
+    color:white;
+    font-size:22px;
+    line-height:normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    margin:0;
+`;
+
+export const FeatureCallOut = styled(Text)`
+    font-size:50px;
+    font-weight:bold;
+    margin-bottom:20px;
+`;
+
+export const Link = styled.p`
+    color:white;
+    text-decoration:none;
+    margin-right:30px;
+    font-weight: ${({active})=>(active=='true' ? '700': 'normal')};
+    cursor:pointer;
+
+    &:hover {
+        font-weight:bold;
+    }
+
+`;
+
+export const Picture = styled.button`
+    background:url(${({src})=>src});
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    border:0;
+    width:32px;
+    height:32px;
+    cursor:pointer;
+    box-sizing:border-box;
+`;
+
+export const Dropdown = styled.div`
+    display:none;
+    background-color:black;
+    position:absolute;
+    padding:10px;
+    width:150px;
+    top:32px;
+    right:10px;
+    box-sizing:border-box;
+`;
+
+export const Profile = styled.div`
+    display:flex;
+    align-items:center;
+    margin-left:20px;
+    position:relative;
+
+    button {
+        cursor:pointer;
+    }
+
+    &:hover > ${Dropdown} {
+        display:flex;
+        flex-direction:column;
+    }
+
+`;
+
