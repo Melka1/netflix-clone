@@ -74,7 +74,7 @@ export default function BrowseContainer({slides, children, ...restProps}){
                                     <Header.TextLink>{user.displayName}</Header.TextLink>
                                 </Header.Group>
                                 <Header.Group>
-                                    <Header.TextLink to={ROUTES.SIGN_IN}>Sign Out</Header.TextLink>
+                                    <Header.TextLink to={ROUTES.SIGN_IN} onClick={()=>firebase.auth().signOut()}>Sign Out</Header.TextLink>
                                 </Header.Group>
                             </Header.Dropdown>
                         </Header.Profile>
